@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 void main(){
     int n;
@@ -11,10 +12,10 @@ void main(){
     {
         int sum = 0, digit;
         int c = i;
-
+        int nodig = (int)log10(n)+1;
         while(c != 0){
             digit = c % 10;
-            sum += (digit*digit*digit);
+            sum += pow(digit,nodig);
             c /= 10;
         }
 

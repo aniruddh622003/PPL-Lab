@@ -14,7 +14,7 @@ void swap(int* n1, int* n2){
     printf("After Swapping -> Number 1: %d; Number 2: %d; \n", *n1, *n2);
 }
 
-float* remainder (int a, int b){
+float * remainder (int a, int b){
     float rem = a % b;
     float *d = &rem;
     return d;
@@ -32,5 +32,5 @@ void main(){
     swap(&num1, &num2);
     float *rempoint;
     rempoint = remainder(num2, num1);
-    printf("Remainder of %d divided by %d is %f", num2, num1, *rempoint);
+    printf("Remainder of %d divided by %d is %.2f", num2, num1, *rempoint);
 }

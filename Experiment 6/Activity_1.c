@@ -1,11 +1,13 @@
 #include <stdio.h>
+#include <math.h>
 
 void armstrong(int n){
     int check = n, sum = 0;
+    int len = floor(log10(n)) + 1;
     while (check > 0)
     {  
         int dig = check % 10;
-        sum += (dig * dig * dig);
+        sum += pow(dig, len);
         check /= 10;
     }
     if (n == sum){
@@ -42,8 +44,8 @@ void coprime(int n){
     }
 }
 
-int factorial(int n){
-    int fac = 1;
+long long factorial(int n){
+    long long fac = 1;
     
     for (int i = 1; i <= n; ++i)
     {
@@ -60,6 +62,6 @@ void main(){
 
     armstrong(num);
     coprime(num);
-    int fac = factorial(num);
-    printf("Factorial of %d is %d", num, fac);
+    long long fac = factorial(num);
+    printf("Factorial of %d is %lld", num, fac);
 }
